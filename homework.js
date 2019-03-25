@@ -131,7 +131,7 @@ function sum(array) {
 // and returns the average of those numbers.
 
 function average(array) {
-    if (typeof array === undefined) {
+    if (array.length === 0) {
         return undefined;
     }
     let total = 0;
@@ -144,6 +144,14 @@ function average(array) {
 
 // 12. Create a function called "minimum" that takes an array of numbers and
 // returns the smallest number in that array.
+
+function minimum(array) {
+    if (array.length === 0) {
+        return undefined;
+    }
+    let min = Math.min(...array);
+    return min;
+}
 
 // 13. There are many techniques to sort arrays in programming. Your programming
 // language will likely include the ability to do this. We are going to
