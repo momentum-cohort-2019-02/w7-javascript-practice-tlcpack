@@ -161,7 +161,7 @@ function minimum(array) {
 // you start with an unsorted array of numbers. You search the array and find the
 // smallest number in the array. You then insert that into a new array as the first
 // element and remove it from the original array. You continue doing this until
-// there are no numbers left in the original array.
+// there are no numbers left in the original array. (use push method)
 //
 // Create a function called selectionSort that takes an array of numbers and returns
 // a sorted array using the above technique.
@@ -176,3 +176,39 @@ function minimum(array) {
 // Note 2: Selection sort can be implemented using one array. Read the explanation at
 // https://courses.cs.vt.edu/csonline/Algorithms/Lessons/SelectionSort/index.html
 // to see how. This may make more sense to you.
+
+function selectionSort(array) {
+    let newArray = [];
+    if (array.length === 0) {
+        return newArray;
+    }
+    var arrayCopy = array.slice(0);
+    
+    let min = Math.min(...arrayCopy);
+
+    let i = 0;
+    while (true) {
+        if (i > arrayCopy.length) {
+            i = 0;
+            let min = Math.min(...arrayCopy);
+            if (arrayCopy[i] === min) {
+                newArray.push(arrayCopy[i]);
+                arrayCopy.splice(i, 1);
+            }
+        }
+        else {
+            let min = Math.min(...arrayCopy);
+            if (arrayCopy[i] === min) {
+                newArray.push(arrayCopy[i]);
+                arrayCopy.splice(i, 1);
+            }
+        }
+        
+        if (arrayCopy.length === 0) {
+            break;
+        }
+        i++
+    }   
+        
+    return newArray; 
+}
