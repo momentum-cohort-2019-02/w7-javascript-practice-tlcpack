@@ -184,20 +184,20 @@ function selectionSort(array) {
     }
     var arrayCopy = array.slice(0);
     
-    let min = Math.min(...arrayCopy);
+    let min = minimum(arrayCopy);
 
     let i = 0;
     while (true) {
         if (i > arrayCopy.length) {
             i = 0;
-            let min = Math.min(...arrayCopy);
+            let min = minimum(arrayCopy);
             if (arrayCopy[i] === min) {
                 newArray.push(arrayCopy[i]);
                 arrayCopy.splice(i, 1);
             }
         }
         else {
-            let min = Math.min(...arrayCopy);
+            let min = minimum(arrayCopy);
             if (arrayCopy[i] === min) {
                 newArray.push(arrayCopy[i]);
                 arrayCopy.splice(i, 1);
